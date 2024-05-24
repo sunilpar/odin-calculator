@@ -1,0 +1,93 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(221deg, #00ffee, #3300ff61, #ab05b7);
+    background-size: 600% 600%;
+    
+    -webkit-animation: AnimationName 43s ease infinite;
+    -moz-animation: AnimationName 43s ease infinite;
+    animation: AnimationName 43s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+
+
+*{
+    font-family: 'Calculator', sans-serif;
+    text-align: center;
+                                                
+}
+.calculator{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-direction: column;
+    width: 500px;
+   border-radius: 20px;
+   gap: 10px;
+}
+.display{
+    background-color: #c0c0c0;
+    height: 100px;
+    width: 486px;
+    flex-direction: column;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.previousDisplay{
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    font-weight: bold;
+    
+    
+}
+.currentDisplay{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+button,.btn{
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 50px 10px 50px;
+    
+    
+}
+.operator{
+    color: orange;
+}
+.clear{
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 95px;
+    
+}
+.equal{
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 110px 10px 121px;
+
+}
