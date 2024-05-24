@@ -2,7 +2,7 @@
 let currentNumber='';
 let previousNumber='';
 let operator='';
-
+let i=0;
 let displayCurrentNumber= document.querySelector(".currentDisplay");
 let displayPreviousNumber= document.querySelector(".previousDisplay");
 
@@ -14,6 +14,10 @@ equal.addEventListener('click',()=>{
 });
 
 
+let decimal = document.querySelector('.decimal');
+decimal.addEventListener('click',()=>{
+    handleDecimal();
+});
 
 let clear = document.querySelector('.clear');
 clear.addEventListener('click',()=>{
@@ -38,17 +42,25 @@ operators.forEach((btn) => {
 
 
 function handleNumber(num){
-    currentNumber += num
-    displayCurrentNumber.textContent=currentNumber;
-    
+    i=0
+    if(currentNumber.length< 21){
+        currentNumber += num
+     displayCurrentNumber.textContent=currentNumber;
+    }
 }
 
 function handleOperator(op){
     operator=op;
+    displayCurrentNumber.textContent='';
+    if(i!=0){
+        displayPreviousNumber.textContent=previousNumber+""+operator;
+    }else{
     previousNumber=currentNumber;
     displayPreviousNumber.textContent=previousNumber+""+operator;
     currentNumber=''
-    displayCurrentNumber.textContent='';
+}
+    i++;
+    
     
 }
 
@@ -74,14 +86,18 @@ function calculate(){
     previousNumber=previousNumber.toString();
     currentNumber='';
     operator='';
-    displayCurrentNumber.textContent=previousNumber;
+    currentNumber=previousNumber
+    displayCurrentNumber.textContent=currentNumber;
     displayPreviousNumber.textContent='0';
 }
-
 function displayClear(){
     displayPreviousNumber.textContent='0';
     displayCurrentNumber.textContent='0';   
     operator='';
     currentNumber='';
     previousNumber='';
+}
+function handleDecimal(){
+    currentNumber +='.';
+    displayCurrentNumber.textContent=currentNumber;
 }
