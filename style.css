@@ -87,6 +87,9 @@ button,.btn{
 .equal{
     font-size: 40px;
     font-weight: bold;
-    padding: 10px 110px 10px 121px;
+    padding: 10px 110px 10px 101px;
 
+}
+.plus{
+    padding-left: 39px;
 }
